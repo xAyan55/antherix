@@ -148,10 +148,10 @@ const HeroSection = memo(() => (
         Built for modern developers, designed for the future of the web.
       </p>
       <div className="hero-buttons">
-        <a href="#get-started" className="btn btn-primary">
-          Deploy Now <ChevronRight size={20} />
-        </a>
-        <button className="btn btn-secondary">View Documentation</button>
+        <Link to="/free-vps" className="btn btn-primary">
+          Free Plan <ChevronRight size={20} />
+        </Link>
+        <Link to="/paid-vps" className="btn btn-secondary">Paid Plan</Link>
       </div>
     </div>
   </section>
