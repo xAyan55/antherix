@@ -358,21 +358,20 @@ const AppContent = () => {
               </div>
               <div className="footer-links">
                 <div className="link-group">
-                  <h4>Product</h4>
-                  <a href="#">Compute</a>
-                  <a href="#">Storage</a>
-                  <a href="#">Networking</a>
+                  <h4>Services</h4>
+                  <Link to="/paid-vps">Paid VPS</Link>
+                  <Link to="/free-vps">Free VPS</Link>
+                  <Link to="/infrastructure">Infrastructure</Link>
                 </div>
                 <div className="link-group">
-                  <h4>Company</h4>
-                  <a href="#">About</a>
-                  <a href="#">Careers</a>
-                  <a href="#">Contact</a>
+                  <h4>Community</h4>
+                  <Link to="/discord">Discord</Link>
+                  <Link to="/support">Support</Link>
                 </div>
                 <div className="link-group">
                   <h4>Legal</h4>
-                  <a href="#">Terms of Service</a>
-                  <a href="#">Privacy Policy</a>
+                  <Link to="/terms">Terms of Service</Link>
+                  <Link to="/rules">Rules & Regulations</Link>
                 </div>
               </div>
             </div>
