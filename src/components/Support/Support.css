@@ -1,0 +1,128 @@
+.support-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.support-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.support-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.support-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.support-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.support-card {
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.support-card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.support-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.support-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.support-faq {
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.support-faq h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.faq-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.faq-item p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .support-grid, .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-title {
+    font-size: 2.5rem;
+  }
+  .support-card, .support-faq {
+    padding: 2rem 1.5rem;
+  }
+}

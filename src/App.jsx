@@ -8,7 +8,8 @@ import Rules from './components/Legal/Rules';
 import Terms from './components/Legal/Terms';
 import Infrastructure from './components/Infrastructure/Infrastructure';
 import Discord from './components/Discord/Discord';
-import { Server, Shield, Zap, Cloud, Globe, Cpu, ChevronRight, Star, BadgeCheck, ChevronDown, Menu, X } from 'lucide-react';
+import Support from './components/Support/Support';
+import { Server, Shield, Zap, Cloud, Globe, Cpu, ChevronRight, Star, BadgeCheck, ChevronDown, Menu, X, Headset } from 'lucide-react';
 
 const NavDropdown = ({ title, items, isMobile, onItemClick }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,6 +100,7 @@ const Navbar = memo(() => {
                 { label: "Discord", href: "/discord" }
               ]} 
             />
+            <Link to="/support" className="nav-link-btn">Support</Link>
           </div>
           <button className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -137,6 +139,9 @@ const Navbar = memo(() => {
                 { label: "Discord", href: "/discord" }
               ]} 
             />
+            <Link to="/support" className="mobile-dropdown-trigger" onClick={() => setMobileMenuOpen(false)}>
+              Support
+            </Link>
           </div>
         </div>
       )}
@@ -276,7 +281,8 @@ const AppContent = () => {
   const isRulesPage = location.pathname === '/rules';
   const isInfraPage = location.pathname === '/infrastructure';
   const isDiscordPage = location.pathname === '/discord';
-  const hideGrainient = isPaidVpsPage || isFreeVpsPage || isTermsPage || isRulesPage || isInfraPage || isDiscordPage;
+  const isSupportPage = location.pathname === '/support';
+  const hideGrainient = isPaidVpsPage || isFreeVpsPage || isTermsPage || isRulesPage || isInfraPage || isDiscordPage || isSupportPage;
 
   return (
     <>
@@ -321,6 +327,7 @@ const AppContent = () => {
           <Route path="/rules" element={<Rules />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/discord" element={<Discord />} />
+          <Route path="/support" element={<Support />} />
         </Routes>
 
         {/* Footer */}
