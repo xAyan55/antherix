@@ -34,14 +34,29 @@ const NavDropdown = ({ title, items, isMobile, onItemClick }) => {
   }
 
   return (
-    <div className="nav-dropdown" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <button className="nav-link-btn">
-        {title} <ChevronDown size={14} />
+    <div 
+      className="nav-dropdown" 
+      onMouseEnter={() => setIsOpen(true)} 
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button 
+        className="nav-link-btn" 
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
+      >
+        {title} <ChevronDown size={14} className={isOpen ? 'rotate-180' : ''} />
       </button>
       {isOpen && (
-        <div className="dropdown-menu glass-panel">
+        <div className="dropdown-menu glass-panel" onClick={(e) => e.stopPropagation()}>
           {items.map((item, idx) => (
-            <Link key={idx} to={item.href} className="dropdown-item">
+            <Link 
+              key={idx} 
+              to={item.href} 
+              className="dropdown-item"
+              onClick={() => setIsOpen(false)}
+            >
               {item.label}
             </Link>
           ))}
