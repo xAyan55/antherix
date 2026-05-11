@@ -16,7 +16,7 @@ const Support = () => {
           rotation={-45}
           edgeFadeWidth={0.0}
           colorCycleSpeed={1.0}
-          brightness={0.2}
+          brightness={0.1}
           color1="#3B82F6"
           color2="#3B82F6"
           color3="#ffffff"
