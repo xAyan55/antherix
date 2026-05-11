@@ -175,3 +175,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .infra-page {
+    padding-top: 100px;
+  }
+  .infra-content {
+    padding: 2rem 1.5rem;
+  }
+  .specs-title {
+    font-size: 1.75rem;
+  }
+  .spec-value {
+    font-size: 1.1rem;
+  }
+}

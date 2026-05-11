@@ -8,34 +8,51 @@ import Rules from './components/Legal/Rules';
 import Terms from './components/Legal/Terms';
 import Infrastructure from './components/Infrastructure/Infrastructure';
 import Discord from './components/Discord/Discord';
-import { Server, Shield, Zap, Cloud, Globe, Cpu, ChevronRight, Star, BadgeCheck, ChevronDown } from 'lucide-react';
+import { Server, Shield, Zap, Cloud, Globe, Cpu, ChevronRight, Star, BadgeCheck, ChevronDown, Menu, X } from 'lucide-react';
 
-const NavDropdown = ({ title, items }) => {
-  return (
-    <div className="dropdown-container">
-      <div className="nav-link">
-        {title}
-        <ChevronDown size={16} className="dropdown-icon" />
+const NavDropdown = ({ title, items, isMobile, onItemClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  if (isMobile) {
+    return (
+      <div className="mobile-dropdown">
+        <button className="mobile-dropdown-trigger" onClick={() => setIsOpen(!isOpen)}>
+          {title} <ChevronDown size={16} className={isOpen ? 'rotate-180' : ''} />
+        </button>
+        {isOpen && (
+          <div className="mobile-dropdown-items">
+            {items.map((item, idx) => (
+              <Link key={idx} to={item.href} className="mobile-dropdown-item" onClick={onItemClick}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
-      <div className="dropdown-menu">
-        {items.map((item, index) => (
-          item.href.startsWith('#') || item.href.startsWith('http') ? (
-            <a key={index} href={item.href} className="dropdown-item">
-              {item.label}
-            </a>
-          ) : (
-            <Link key={index} to={item.href} className="dropdown-item">
+    );
+  }
+
+  return (
+    <div className="nav-dropdown" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+      <button className="nav-link-btn">
+        {title} <ChevronDown size={14} />
+      </button>
+      {isOpen && (
+        <div className="dropdown-menu glass-panel">
+          {items.map((item, idx) => (
+            <Link key={idx} to={item.href} className="dropdown-item">
               {item.label}
             </Link>
-          )
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 const Navbar = memo(() => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -83,8 +100,46 @@ const Navbar = memo(() => {
               ]} 
             />
           </div>
+          <button className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay glass-panel">
+          <div className="mobile-menu-links">
+            <NavDropdown 
+              isMobile
+              onItemClick={() => setMobileMenuOpen(false)}
+              title="Services" 
+              items={[
+                { label: "Free VPS", href: "/free-vps" },
+                { label: "Paid VPS", href: "/paid-vps" }
+              ]} 
+            />
+            <NavDropdown 
+              isMobile
+              onItemClick={() => setMobileMenuOpen(false)}
+              title="Legal" 
+              items={[
+                { label: "Terms", href: "/terms" },
+                { label: "Rules", href: "/rules" }
+              ]} 
+            />
+            <NavDropdown 
+              isMobile
+              onItemClick={() => setMobileMenuOpen(false)}
+              title="About Atherix" 
+              items={[
+                { label: "Infrastructure", href: "/infrastructure" },
+                { label: "Discord", href: "/discord" }
+              ]} 
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 });
