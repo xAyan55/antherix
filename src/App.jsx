@@ -57,7 +57,7 @@ const Navbar = memo(() => {
       <nav className="floating-nav glass-panel">
         <Link to="/" className="nav-left cursor-pointer">
           <img src="/antherix.webp" alt="Logo" className="logo-img" />
-          <span className="logo-text">AntherixCloud</span>
+          <span className="logo-text">AtherixCloud</span>
         </Link>
         <div className="nav-right">
           <div className="nav-links">
@@ -76,7 +76,7 @@ const Navbar = memo(() => {
               ]} 
             />
             <NavDropdown 
-              title="About Antherix" 
+              title="About Atherix" 
               items={[
                 { label: "Infrastructure", href: "/infrastructure" },
                 { label: "Discord", href: "/discord" }
@@ -111,7 +111,7 @@ const ReviewCard = memo(({ review }) => (
 ));
 
 const reviews = [
-  { text: "AntherixCloud completely transformed our deployment pipeline. The latency is practically non-existent globally.", author: "Sarah Jenkins", role: "CTO at TechFlow", initial: "S" },
+  { text: "AtherixCloud completely transformed our deployment pipeline. The latency is practically non-existent globally.", author: "Sarah Jenkins", role: "CTO at TechFlow", initial: "S" },
   { text: "We migrated 50+ microservices and the uptime has been flawless. Outstanding support team too.", author: "Michael Torres", role: "Lead DevOps", initial: "M" },
   { text: "The edge network capabilities allowed us to serve global customers with sub-10ms response times effortlessly.", author: "Elena Rossi", role: "Founder, ScaleApp", initial: "E" },
   { text: "Infinite scalability means we don't worry about traffic spikes anymore. It just works perfectly under load.", author: "David Kim", role: "VP Engineering", initial: "D" },
@@ -141,7 +141,7 @@ const HeroSection = memo(() => (
       </div>
       <h1 className="hero-title">
         Power Your Future with <br />
-        <span className="text-gradient">AntherixCloud</span>
+        <span className="text-gradient">AtherixCloud</span>
       </h1>
       <p className="hero-subtitle">
         Experience unparalleled performance, enterprise security, and infinite scalability. 
@@ -194,7 +194,7 @@ const Home = memo(() => (
       <div className="container">
         <div className="cta-box glass-panel">
           <h2>Get started with us today</h2>
-          <p>Join thousands of developers building on AntherixCloud.</p>
+          <p>Join thousands of developers building on AtherixCloud.</p>
         </div>
       </div>
     </section>
@@ -263,7 +263,7 @@ const AppContent = () => {
               <div className="footer-brand">
                 <div className="nav-left" style={{ marginBottom: '1rem' }}>
                   <img src="/antherix.webp" alt="Logo" className="logo-img" />
-                  <span className="logo-text">AntherixCloud</span>
+                  <span className="logo-text">AtherixCloud</span>
                 </div>
                 <p>Next-generation cloud infrastructure for modern teams.</p>
               </div>
@@ -288,7 +288,7 @@ const AppContent = () => {
               </div>
             </div>
             <div className="footer-bottom">
-              <p>&copy; {new Date().getFullYear()} AntherixCloud. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} AtherixCloud. All rights reserved.</p>
             </div>
           </div>
         </footer>
