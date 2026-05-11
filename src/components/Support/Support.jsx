@@ -64,7 +64,7 @@ const Support = () => {
             </div>
             <div className="faq-item">
               <h4>Billing Questions?</h4>
-              <p>Open a ticket in Discord under the #billing-support channel.</p>
+              <p>Open a ticket in Discord under the #tickets channel.</p>
             </div>
           </div>
         </div>
