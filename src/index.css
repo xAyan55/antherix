@@ -479,6 +479,30 @@ body {
   position: relative;
   z-index: 1;
 }
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.btn-discord {
+  background: #5865F2;
+  color: #ffffff !important;
+  border: none;
+}
+.btn-discord:hover {
+  background: #4752c4;
+  box-shadow: 0 8px 24px rgba(88, 101, 242, 0.3);
+}
+
+@media (max-width: 640px) {
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
 
 /* Footer */
 .footer {

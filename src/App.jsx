@@ -195,6 +195,18 @@ const Home = memo(() => (
         <div className="cta-box glass-panel">
           <h2>Get started with us today</h2>
           <p>Join thousands of developers building on AtherixCloud.</p>
+          <div className="cta-buttons">
+            <Link to="/paid-vps" className="btn btn-primary">Paid Plans</Link>
+            <Link to="/free-vps" className="btn btn-secondary">Free Plans</Link>
+            <a 
+              href="https://discord.gg/uk5jHjNxZw" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-discord"
+            >
+              Join Discord
+            </a>
+          </div>
         </div>
       </div>
     </section>
